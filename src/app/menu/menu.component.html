@@ -1,0 +1,33 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper grey lighten-2 accent-4">
+      <div class="container">
+        <a class="brand-logo" href="index.html">
+          <img class="my-logo" src="assets/images/logogym.png" />
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="#" class="flow-text grey-text text-darken-4" >GymWorkoutList</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<ul class="sidenav grey " id="mobile-demo" #mobile>
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="center">
+        <a href="#" class="flow-text grey-text text-darken-4" >GymWorkoutList</a>
+      </div>
+    </div>
+  </div>
+  <li><a routerLink="/newtraining" class="flow-text">Novo Treino</a></li>
+  <li>
+    <a routerLink="/trainingslist" class="flow-text">Treinos Salvos</a>
+  </li>
+</ul>

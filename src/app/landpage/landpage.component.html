@@ -1,0 +1,48 @@
+<div class="intro red z-depth-1 my-logo-text">
+  <h1 class="black-text text-lighten-5">GYM WORKOUT</h1>
+  <h4 class="amber-text text-darken-1">NO PAIN NO GAIN!!!</h4>
+</div>
+
+
+<div id="inicial-treino" class="row" (click)="showButton()" (dblclick)="hideButton()">
+  <div class="col s12 m6 offset-m3">
+    <a >
+      <div
+        class="card-panel amber accent-4 center my-card-button">
+        <span class="white-text flow-text" > VAMOS TREINAR !!! </span>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+
+
+<div class="container about"  *ngIf="this.showButtons">
+  <div id="novo-treino" class="row">
+    <div class="col s12 m6 offset-m3">
+      <a routerLink="/newtraining">
+        <div
+          class="card-panel red accent-4 center my-card-button"
+        >
+          <span class="white-text flow-text"> NOVO TREINO </span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+<div id="treino-salvo" class="row">
+  <div class="col s12 m6 offset-m3">
+    <a routerLink="/trainingslist">
+      <div
+        class="card-panel red accent-4 center my-card-button">
+        <span class="white-text flow-text" > TREINOS SALVOS </span>
+      </div>
+    </a>
+  </div>
+
+</div>
+</div>
+
+
+

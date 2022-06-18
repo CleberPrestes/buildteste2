@@ -1,0 +1,155 @@
+<form class="col s12 " #form="ngForm" (submit)="saveStorage(training.name, training.day, training.exercise, training.serie, training.repetition, training.weight)"  >
+
+<div class="newtraining z-depth-1 center">
+  <h4 class="grey-text text-darken-1">Nome do Treino</h4>
+  <div id="painel-login" class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div
+          id="entrada-treino"
+          class=" card-panel red accent-4 center my-card-button">
+         <input
+         id="training-name"
+          name="training-name"
+          type="text"
+         class="validate amber-text"
+         placeholder="Nome do treino"
+         [(ngModel)]="training.name"
+         pattern="[A-ZÀ-Úa-z]{6}\s\d{1}"
+         #name="ngModel"
+         required
+       />
+       <div class="white-text" [hidden]="name.valid || name.untouched">
+         Nome do treino deve ser uma palavra  de 6 carcateres seguida de numero.
+       </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h4 class="grey-text text-darken-1">Dia de treino</h4>
+
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div class="card-panel red accent-4 center my-card-button">
+  <div class="row">
+    <div class="col s12" >
+      <select  (change)="this.onSelectChange($event)" >
+        <option value="-1" selected>Escolha um dia da semana</option>
+        <option value="Segunda">Segunda</option>
+        <option value="Terça">Terça</option>
+        <option value="Quarta">Quarta</option>
+        <option value="Quinta">Quinta</option>
+        <option value="Sexta">Sexta</option>
+        <option value="Sabado">Sabado</option>
+        <option value="Domingo">Domingo</option>
+      </select>
+    </div>
+  </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <h4 class="grey-text text-darken-1">Exercicio</h4>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div class="card-panel red accent-4 center my-card-button">
+          <input id="training-exercise"  name="training-exercise"
+          type="text" class="validate" placeholder="Nome do treino"
+          [(ngModel)]="training.exercise"
+          pattern="[A-Z][a-z]+"
+          #exercise="ngModel"
+          required
+          placeholder="Exercicio" />
+          <div class="white-text" [hidden]="exercise.valid || exercise.untouched">
+            Iniciar palavra com uma letra maiuscula depois letras minusculas.
+          </div>
+
+        </div>
+      </a>
+    </div>
+  </div>
+  <h4 class="grey-text text-darken-1">Series</h4>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div class="card-panel red accent-4 center my-card-button">
+          <input id="training-serie"  name="training-serie" min='0'
+          type="number" class="validate"
+          [(ngModel)]="training.serie" placeholder="Series"
+          pattern="\d+"
+          #serie="ngModel"
+          required >
+          <div class="white-text" [hidden]="serie.valid || serie.untouched">
+            Serie deve ser um numero.
+           </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h4 class="grey-text text-darken-1">Repetições</h4>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div class="card-panel red accent-4 center my-card-button">
+          <input id="training-repetition"  name="training-repetition"
+          [(ngModel)]="training.repetition" placeholder="Repetições"
+          pattern="\d+"
+          #repetition="ngModel"
+          required
+          type="number" min='0'>
+          <div class="white-text" [hidden]="repetition.valid || repetition.untouched">
+            Repetição deve ser um numero.
+           </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h4 class="grey-text text-darken-1">Peso</h4>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div class="card-panel red accent-4 center my-card-button">
+          <input id="training-weight"  name="training-weight"
+          [(ngModel)]="training.weight" placeholder="Peso"
+          type="number" min='0'
+          pattern="\d+"
+          #weight="ngModel"
+          required >
+          <div class="white-text" [hidden]="weight.valid || weight.untouched">
+            Peso deve ser um numero.
+           </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container contact">
+    <div class="row">
+      <button
+      class=" waves-effect waves-light btn-large card-panel amber accent-4 center my-card-button  white-text flow-text"
+      type="submit"
+     
+      [disabled]="!form.valid">SALVAR</button>
+      <br>
+      <button
+      class=" waves-effect waves-light btn-large card-panel amber accent-4 center my-card-button  white-text flow-text"
+         (click)="addTraining(training)"
+      [disabled]="!form.valid">SALVAR JSON SERVER</button>
+    <br>
+    <button   class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text"  routerLink="">
+    <a >
+        <span class="white-text flow-text"> VOLTAR </span>
+    </a>
+    </button>
+    </div>
+  </div>
+</div>
+
+</form>

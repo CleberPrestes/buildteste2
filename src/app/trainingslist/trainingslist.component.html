@@ -1,0 +1,54 @@
+<div class="newtraining z-depth-1 my-logo-text center">
+  <h4 class="grey-text text-darken-1">
+    <h4>LISTA DE TREINOS </h4>
+  </h4>
+  <table class="center">
+  <thead >
+
+  </thead>
+  <tbody >
+    <tr *ngFor="let d of this.trainingListSave"  >
+      <td class="center">{{d.name}}</td>
+      <button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" >Del Local</button>
+      <button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" >Del Server</button>
+      <button  class="waves-effect waves-light btn-small  amber " (click)="getTrainingDetail(d)" >Detalhes</button>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>Uso de pipes para formatar detalhes de series e pesos</p>
+
+
+<app-nametraining [nametraining]="informacaoPai" [listatraining]="listaOutput"></app-nametraining>
+
+
+<table>
+  <thead>
+    <tr>
+      <th data-field="td-value" class="center">Dia</th>
+      <th data-field="td-value"class="center">Exercicio</th>
+      <th data-field="td-date"class="center">Serie</th>
+      <th data-field="td-value"class="center">Repetições</th>
+      <th data-field="td-value"class="center">Peso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of this.trainingListDetails">
+      <td class="center">{{t.day}}</td>
+      <td class="center">{{t.exercise}}</td>
+      <td class="center">{{t.serie | x}}</td>
+      <td class="center">{{t.repetition | x}}</td>
+      <td class="center">{{t.weight | kg }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<br>
+<button  routerLink="" class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text" >
+  <a >
+      <span class="white-text flow-text"> VOLTAR </span>
+  </a>
+  </button>
+</div>
