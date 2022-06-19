@@ -13,6 +13,7 @@ import { NametrainingComponent } from './nametraining/nametraining.component';
 import { HttpClientModule } from '@angular/common/http';
 import { KgPipe } from './kg.pipe';
 import { TrainingslistComponent } from './trainingslist/trainingslist.component';
+import { TrainingdetailComponent } from './trainingdetail/trainingdetail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TrainingslistComponent } from './trainingslist/trainingslist.component'
     NametrainingComponent,
     KgPipe,
     xPipe,
-    TrainingslistComponent
+    TrainingslistComponent,
+    TrainingdetailComponent
   ],
   imports: [
     BrowserModule,

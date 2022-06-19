@@ -48,6 +48,15 @@ export class TrainingserviceService {
     return this.http.get<Training[]>(this.apiUrl)
   }
 
+  getTrainingById(id: any):Observable<Training>{
+    return this.http.get<Training>(`${this.apiUrl}/${id}`)
+  }
+
+
 
 
 }
+
+
+
+

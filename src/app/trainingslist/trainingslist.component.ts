@@ -16,18 +16,17 @@ export class TrainingslistComponent implements OnInit {
   trainingListDetails: Training[] = []
 
   trainingSaveName: string ='';
-  @Output() informacaoPai =  'Treinos'
 
+  @Output() informacaoPai =  'Lista de Treinos'
   @Output() listaOutput: Training[]=[]
 
   constructor(private trainingService: TrainingserviceService) {
     this.getTrainings()
   }
+
   ngOnInit(): void {
 
     //Lista com promisses
-
-    
     this.trainingService
     .getTraininigWithPromise()
     .then((trainingListSave)=>(this.trainingListSave = trainingListSave))
@@ -43,13 +42,9 @@ export class TrainingslistComponent implements OnInit {
       .getTraininigWithObservable().subscribe()
     alert('Dados do Json-sever com Observable')
 */
-
-
   }
 
-
   removeTraining(item: Training){
-
     this.trainingListSave.splice(this.trainingListSave.indexOf(item) , 1)
     let jsonKeyList = JSON.stringify(this.trainingListSave)
     localStorage['listaTreino'] =jsonKeyList;
@@ -60,14 +55,11 @@ export class TrainingslistComponent implements OnInit {
     this.trainingService.removeTraining(training.id).subscribe()
   }
 
-
   //teste de get
   getTrainingDetail(training: Training){
     this.trainingListDetails = this.trainingListSave.filter((a)=>(training.name==a.name))
-
     var teste = this.trainingListSave.find((treino)=>{return treino.name ==training.name})
     const testeNome = teste?.name
-
     if(testeNome!==undefined){
       this.informacaoPai = testeNome?.toString()
     }

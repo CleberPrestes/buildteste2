@@ -1,26 +1,28 @@
 <div class="newtraining z-depth-1 my-logo-text center">
   <h4 class="grey-text text-darken-1">
-    <h4>LISTA DE TREINOS </h4>
+    <app-nametraining [nametraining]="informacaoPai" ></app-nametraining>
   </h4>
   <table class="center">
   <thead >
 
   </thead>
   <tbody >
-    <tr *ngFor="let d of this.trainingListSave"  >
+    <tr *ngFor="let d of this.trainingListSave"
+    >
       <td class="center">{{d.name}}</td>
       <button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" >Del Local</button>
       <button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" >Del Server</button>
-      <button  class="waves-effect waves-light btn-small  amber " (click)="getTrainingDetail(d)" >Detalhes</button>
+      <button  class="waves-effect waves-light btn-small  amber " (click)="getTrainingDetail(d)" [routerLink]="['/trainingslist/detail', d.id]">Detalhes</button>
     </tr>
   </tbody>
 </table>
 
+<!--
 
 <p>Uso de pipes para formatar detalhes de series e pesos</p>
 
 
-<app-nametraining [nametraining]="informacaoPai" [listatraining]="listaOutput"></app-nametraining>
+<app-nametraining [nametraining]="informacaoPai" ></app-nametraining>
 
 
 <table>
@@ -44,6 +46,9 @@
   </tbody>
 </table>
 
+
+
+-->
 
 <br>
 <button  routerLink="" class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text" >
