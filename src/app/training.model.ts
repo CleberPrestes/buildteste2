@@ -1,6 +1,6 @@
 export class Training {
 
-  id:number=0
+  id:any=0
   name: string ='';
   day: string='';
   exercise: string='';

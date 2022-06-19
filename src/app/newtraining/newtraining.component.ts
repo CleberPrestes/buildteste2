@@ -14,20 +14,14 @@ export class NewtrainingComponent implements OnInit,  AfterViewInit{
   training: Training = new Training;
 
 
-
- // name = this.training.name;
- // day = this.training.day;
- // exercise = this.training.exercise;
- // serie = this.training.serie;
- // repetition = this.training.repetition;
- // weight = this.training.weight
-
-  nameTraining: string ='treino teste saida'
+  jsonOrigin: boolean = true
+  localOrigin: boolean= false
 
   trainingList=[{}]
 
-  saveStorage(name: string, day: string, exercise: string, serie: number, repetition: number, weight: number){
+  saveStorage(id: any, name: string, day: string, exercise: string, serie: number, repetition: number, weight: number){
 
+    this.training.id = id;
     this.training.name = name;
     this.training.day = day;
     this.training.exercise = exercise;
@@ -43,24 +37,18 @@ export class NewtrainingComponent implements OnInit,  AfterViewInit{
 
   saveListLocal(){
 
-
     if( JSON.parse(localStorage.getItem('listaTreino')!)){
       this.trainingList = JSON.parse(localStorage.getItem('listaTreino')!);
       this.trainingList.push(this.training)
       let jsonKeyList = JSON.stringify(this.trainingList)
       localStorage['listaTreino'] =jsonKeyList;
      }
-
         let jsonKeyList = JSON.stringify(this.trainingList)
         localStorage['listaTreino'] =jsonKeyList;
-
   }
 
 
-  onSubmit() {
-
-
-  }
+  onSubmit() { }
 
   onSelectChange(event: Event){
     this.training.day = (event.target as HTMLInputElement).value;
@@ -68,29 +56,33 @@ export class NewtrainingComponent implements OnInit,  AfterViewInit{
   }
 
 
-  constructor(private trainingService: TrainingserviceService) {
-
-
-   }
+  constructor(private trainingService: TrainingserviceService) { }
  ngAfterViewInit(): void {
   var elems = document.querySelectorAll('select');
   M.FormSelect.init(elems, {});
   }
 
-  // ngAfterViewInit() {
-  //  var elems = document.querySelectorAll('select');
-  //   M.FormSelect.init(elems, {});
-  // }
-
 
   ngOnInit(): void {
+
+
+    this.trainingService
+    .getTraininigWithPromise()
+    .then()
+    .catch((e) => {
+      //erro ao pegar do json-server
+      this.jsonOrigin= false
+      this.localOrigin= true
+
+    });
+
+
 
 
   }
 
   addTraining(training: Training){
-
-    this.trainingService.adddTraining(training).subscribe();
+    this.trainingService.addTraining(training).subscribe();
   }
 
 }

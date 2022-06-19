@@ -1,4 +1,4 @@
-<form class="col s12 " #form="ngForm" (submit)="saveStorage(training.name, training.day, training.exercise, training.serie, training.repetition, training.weight)"  >
+<form class="col s12 " #form="ngForm" (submit)="saveStorage(training.id, training.name, training.day, training.exercise, training.serie, training.repetition, training.weight)"  >
 
 <div class="container about center">
   <h4 class="grey-text text-darken-1">Nome do Treino</h4>
@@ -15,6 +15,7 @@
          class="validate white-text "
          placeholder="Nome do treino"
          [(ngModel)]="training.name"
+         [(ngModel)]="training.id"
          pattern="[A-ZÀ-Úa-z]{6}\s\d{2}"
          #name="ngModel"
          required
@@ -131,17 +132,22 @@
   </div>
 
   <div class="container contact">
+
     <div class="row">
+
       <button
       class=" waves-effect waves-light btn-large card-panel amber accent-4 center my-card-button  white-text flow-text"
       type="submit"
-
+      *ngIf="this.localOrigin"
       [disabled]="!form.valid">SALVAR LOCAL</button>
       <br>
+
       <button
       class=" waves-effect waves-light btn-large card-panel amber accent-4 center my-card-button  white-text flow-text"
          (click)="addTraining(training)"
+         *ngIf="this.jsonOrigin"
       [disabled]="!form.valid">SALVAR JSON SERVER</button>
+
     <br>
     <button   class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text"  routerLink="">
     <a >

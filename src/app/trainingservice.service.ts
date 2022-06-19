@@ -41,7 +41,7 @@ export class TrainingserviceService {
   }
 
 
-  adddTraining(training: Training){
+  addTraining(training: Training){
     return this.http.post<Training>(this.apiUrl, training);
   }
 
@@ -58,6 +58,7 @@ export class TrainingserviceService {
     return this.http.get<Training>(`${this.apiUrl}/${id}`)
   }
 
+  
 
 
 

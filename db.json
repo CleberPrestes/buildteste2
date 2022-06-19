@@ -53,6 +53,24 @@
       "serie": 4,
       "repetition": 14,
       "weight": 26
+    },
+    {
+      "id": "CwhYrf_",
+      "name": "Treino 74",
+      "day": "Sexta",
+      "exercise": "Supino",
+      "serie": 3,
+      "repetition": 3,
+      "weight": 4
+    },
+    {
+      "id": "Treino 99",
+      "name": "Treino 99",
+      "day": "Sabado",
+      "exercise": "Teste",
+      "serie": 4,
+      "repetition": 3,
+      "weight": 5
     }
   ]
 }
