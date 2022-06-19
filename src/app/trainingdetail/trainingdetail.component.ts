@@ -28,13 +28,9 @@ export class TrainingdetailComponent implements OnInit {
   ngOnInit(): void {
 
     let idParam: any = this.route.snapshot.params.id
-
     let trainingListLocal = JSON.parse(localStorage.getItem('listaTreino')!) as Training[];
-
     trainingListLocal = trainingListLocal.filter((t) => {
       return t.id === idParam})
-
-
       this.localTraining = trainingListLocal[0]
 
   }

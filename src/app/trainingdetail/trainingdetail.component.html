@@ -1,77 +1,6 @@
-<ng-container *ngIf="treinoteste | async as Treino">
 <h4 class="my-logo-text center">Detalhes dos Treinos</h4>
-<!--
-<h4 class="grey-text text-darken-1 center">Nome do Treino</h4>
-<div class="container contact center">
-<div id="nome-treino" class="row">
-  <div class="col s12 m6 offset-m3">
-    <a>
-      <div
-         class=" card-panel red accent-4 center my-card-button">
-        <span  class="white-text  flow-text"> {{ Treino.name }}</span>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
-<h4 class="grey-text text-darken-1 center">Dia</h4>
-<div class="container contact center">
-<div id="nome-treino" class="row">
-  <div class="col s12 m6 offset-m3">
-    <a>
-      <div
-         class=" card-panel red accent-4 center my-card-button">
-        <span  class="white-text  flow-text"> {{ Treino.day }}</span>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
-h4 class="grey-text text-darken-1 center">Series</h4>
-<div class="container contact center">
-<div id="nome-treino" class="row">
-  <div class="col s12 m6 offset-m3">
-    <a>
-      <div
-         class=" card-panel red accent-4 center my-card-button">
-        <span  class="white-text  flow-text"> {{ Treino.serie | x}}</span>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
-<h4 class="grey-text text-darken-1 center">Repetições</h4>
-<div class="container contact center">
-<div id="nome-treino" class="row">
-  <div class="col s12 m6 offset-m3">
-    <a>
-      <div
-         class=" card-panel red accent-4 center my-card-button">
-        <span  class="white-text  flow-text"> {{ Treino.repetition | x}}</span>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
-<h4 class="grey-text text-darken-1 center">Peso</h4>
-<div class="container contact center">
-<div id="nome-treino" class="row">
-  <div class="col s12 m6 offset-m3">
-    <a>
-      <div
-         class=" card-panel red accent-4 center my-card-button">
-        <span  class="white-text  flow-text"> {{ Treino.weight | kg}}</span>
-      </div>
-    </a>
-  </div>
-</div>
-<button  routerLink="/trainingslist" class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text" >
-  <a >
-      <span class="white-text flow-text"> VOLTAR </span>
-  </a>
-  </button>
-</div>
--->
+<ng-container *ngIf="treinoteste | async as Treino">
+
 
 <div class="container contact center">
 
@@ -118,6 +47,49 @@ h4 class="grey-text text-darken-1 center">Series</h4>
 
 </ng-container>
 
+<!--
+<div class="container contact center">
+
+  <div id="nome-treino" class="row">
+    <div class="col s12 m6 offset-m3">
+      <a>
+        <div
+           class=" card-panel red accent-4 center my-card-button">
+          <span  class="white-text  flow-text"> {{ localTraining.name }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+<table>
+<thead>
+  <tr>
+    <th data-field="td-value" class="center">Dia</th>
+    <th data-field="td-value"class="center">Exercicio</th>
+    <th data-field="td-date"class="center">Serie</th>
+    <th data-field="td-value"class="center">Repetições</th>
+    <th data-field="td-value"class="center">Peso</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td class="center">{{localTraining.day}}</td>
+    <td class="center">{{localTraining.exercise}}</td>
+    <td class="center">{{localTraining.serie | x}}</td>
+    <td class="center">{{localTraining.repetition | x}}</td>
+    <td class="center">{{localTraining.weight | kg }}</td>
+  </tr>
+</tbody>
+</table>
+<br>
+
+</div>
+
+-->
+
+
+
 <div class="container contact center">
   <button  routerLink="/trainingslist" class=" waves-effect waves-light btn-large  amber accent-4 center my-card-button white-text flow-text" >
     <a >
@@ -125,6 +97,8 @@ h4 class="grey-text text-darken-1 center">Series</h4>
     </a>
     </button>
 </div>
+
+<br>
 
 
 
