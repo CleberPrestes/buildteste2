@@ -29,6 +29,12 @@ export class TrainingserviceService {
   }
 
 
+  getByIdLocal(id: any) {
+
+    return this.trainingListSave.find(training => training.id === id)
+  }
+
+
   getAll(): Observable<Training[]>{
 
    return this.http.get<Training[]>(this.apiUrl);

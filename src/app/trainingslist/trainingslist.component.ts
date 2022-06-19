@@ -15,7 +15,9 @@ export class TrainingslistComponent implements OnInit {
 
   trainingListDetails: Training[] = []
 
-  trainingSaveName: string ='';
+  dataOrigin: string='JSon-Server'
+  jsonOrigin: boolean = true
+  localOrigin: boolean= false
 
   @Output() informacaoPai =  'Lista de Treinos'
   @Output() listaOutput: Training[]=[]
@@ -33,7 +35,11 @@ export class TrainingslistComponent implements OnInit {
     .catch((e) => {
       //erro ao pegar do json-server
       this.trainingListSave = JSON.parse(localStorage.getItem('listaTreino')!) as Training[];
-      alert('Json-sever fora de funcionamento dados apresentados são do LocalStorage')
+      this.dataOrigin = 'Local Storage'
+
+      this.jsonOrigin= false
+      this.localOrigin= true
+
     });
 
     //Lista com Observable
@@ -41,7 +47,7 @@ export class TrainingslistComponent implements OnInit {
       this.trainingService
       .getTraininigWithObservable().subscribe()
     alert('Dados do Json-sever com Observable')
-*/
+    */
   }
 
   removeTraining(item: Training){

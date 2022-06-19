@@ -1,7 +1,8 @@
 <div class="newtraining z-depth-1 my-logo-text center">
-  <h4 class="grey-text text-darken-1">
+  <h2 class="grey-text text-darken-1">
     <app-nametraining [nametraining]="informacaoPai" ></app-nametraining>
-  </h4>
+  </h2>
+  <h5>{{dataOrigin}}</h5>
   <table class="center">
   <thead >
 
@@ -10,9 +11,9 @@
     <tr *ngFor="let d of this.trainingListSave"
     >
       <td class="center">{{d.name}}</td>
-      <button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" >Del Local</button>
-      <button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" >Del Server</button>
-      <button  class="waves-effect waves-light btn-small  amber " (click)="getTrainingDetail(d)" [routerLink]="['/trainingslist/detail', d.id]">Detalhes</button>
+      <button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" *ngIf="this.localOrigin" >Del Local</button>
+      <button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" *ngIf="this.jsonOrigin">Del Server</button>
+      <button  class="waves-effect waves-light btn-small  amber "  [routerLink]="['/trainingslist/detail', d.id]">Detalhes</button>
     </tr>
   </tbody>
 </table>
