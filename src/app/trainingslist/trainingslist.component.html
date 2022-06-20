@@ -3,17 +3,20 @@
     <app-nametraining [nametraining]="informacaoPai" ></app-nametraining>
   </h2>
   <h5>{{dataOrigin}}</h5>
-  <table class="center">
+  <table class="highlight centered">
   <thead >
 
   </thead>
   <tbody >
-    <tr *ngFor="let d of this.trainingListSave"
-    >
-      <td class="center">{{d.name}}</td>
-      <button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" *ngIf="this.localOrigin" >Del Local</button>
-      <button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" *ngIf="this.jsonOrigin">Del Server</button>
-      <button  class="waves-effect waves-light btn-small  amber "  [routerLink]="['/trainingslist/detail', d.id]">Detalhes</button>
+    <tr *ngFor="let d of this.trainingListSave" >
+     
+      <td >{{d.name}}</td>
+      <td ><button  class="waves-effect waves-light btn-small  red darken-4" (click)="removeTraining(d)" *ngIf="this.localOrigin" >Del Local</button></td>
+      <td ><button  class="waves-effect waves-light btn-small  grey darken-4" (click)="testRemoveComService(d)" *ngIf="this.jsonOrigin">Del Server</button></td>
+
+      <td><button  class="waves-effect waves-light btn-small  amber "  [routerLink]="['/trainingslist/detail', d.id]">Detalhes</button></td>
+
+
     </tr>
   </tbody>
 </table>

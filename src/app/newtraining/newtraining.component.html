@@ -7,12 +7,12 @@
       <a>
         <div
           id="entrada-treino"
-          class=" card-panel red accent-4 center my-card-button">
+          class="input-field card-panel red accent-4 center my-card-button">
          <input
          id="training-name"
           name="training-name"
           type="text"
-         class="validate white-text "
+         class="input-field validate white-text "
          placeholder="Nome do treino"
          [(ngModel)]="training.name"
          [(ngModel)]="training.id"
@@ -35,7 +35,7 @@
       <a>
         <div class="card-panel red accent-4 center my-card-button">
   <div class="row">
-    <div class="col s12 " >
+    <div class="input-field validate col s12 white-text center " >
       <select  (change)="this.onSelectChange($event)" >
         <option value="-1" selected>Escolha um dia da semana</option>
         <option value="Segunda">Segunda</option>
@@ -60,7 +60,7 @@
       <a>
         <div class="card-panel red accent-4 center my-card-button">
           <input id="training-exercise"  name="training-exercise"
-          type="text" class="validate" placeholder="Nome do treino"
+          type="text" class="input-field validate white-text validate" placeholder="Nome do treino"
           [(ngModel)]="training.exercise"
           pattern="[A-Z][a-z]+"
           #exercise="ngModel"
